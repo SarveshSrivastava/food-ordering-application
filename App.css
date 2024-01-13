@@ -1,0 +1,40 @@
+.HeaderComponent{
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.HeaderComponent img{
+    height:100px;
+
+}
+.nav-items{
+    display: inline-flex;
+    float: right;
+    list-style-type: none;
+}
+.nav-items li{
+    padding: 0 25px;
+}
+.restaurant-cards{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.restaurant-cards img{
+    height: 250px;
+    width: 300px;
+}
+.RestaurantsComponents{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center along the main axis (horizontal) */
+    align-items: center;
+}
+.restaurant-cards p{
+    font-size: 15px;
+}
+.restaurant-cards:hover{
+    border: 3px solid gold;
+}

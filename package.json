@@ -1,0 +1,27 @@
+{
+  "name": "food-ordering-application",
+  "version": "1.0.0",
+  "description": "this is food ordering application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarveshSrivastava/food-ordering-application.git"
+  },
+  "author": "Sarvesh Srivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarveshSrivastava/food-ordering-application/issues"
+  },
+  "homepage": "https://github.com/SarveshSrivastava/food-ordering-application#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  }
+}

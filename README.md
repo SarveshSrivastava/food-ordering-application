@@ -34,3 +34,13 @@ This is config driven UI which means everything is received from backend
 - whenever there is a change in state variable internally diff algorithm i.e., difference between the old virtual dom and new virtual dom is done and after that components re-renders.
 - virtual DOM is the react object:-
     - React.createElement("h1",{id:"head"},"heading);   -   this is an object not HTML  -   This object when passed to ReactDOM.render() makes it HTML and renders in browsers
+
+# loads ---> render ---> api call ---> re-render
+## USEEFFECT(()=>{},[])
+- this is executed after initial render if page i.e., first page is loaded then useeffect is called
+
+## Shimmer UI
+- instead of adding spinner for loading we can display a dummy UI until the response is received from api.
+
+## as we are using swiggy api we will face CORS policy access issue for that we have added a chrome extension to allow CORS policy
+

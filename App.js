@@ -7,6 +7,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import AboutUs from "./Components/AboutUs";
 import ContactUs from "./Components/ContactUs";
 import ErrorPage from "./Components/ErrorPage";
+import UserClass from "./Components/UserClass";
 
 const App = () => (
   <h1>
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/restaurant/:restaurantId",
         element:<RestaurantMenu/>,
+      },
+      {
+        path: "/user",
+        element:<UserClass name="Sarvesh" location="Delhi"/>,
       },
     ],
     errorElement: <ErrorPage />,

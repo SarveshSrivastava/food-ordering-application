@@ -92,3 +92,10 @@ const router = createBrowserRouter([
 - "/restaurants/:restaurantId"
 - to access this path vaiable we can make use of useParams hook from react-router-dom    
 
+
+## Class Componet
+- refer UserClass and ChildUserClass
+- componetDidMount() is used to make api call
+- first constructor is executed then the render then componetDidMount
+- this is similar to functional componet first the jsx is rendered then useeffect with empty dependency is called
+

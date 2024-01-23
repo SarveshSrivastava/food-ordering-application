@@ -34,10 +34,27 @@ class UserClass extends Component {
         >
           Increment Count
         </button>
-        <ChildUserClass/>
+        <ChildUserClass name="First"/>
+        <ChildUserClass name="Second"/>
       </div>
     );
   }
 }
 
 export default UserClass;
+
+
+// render phase begins
+// - parent constructor
+// - parent render
+//   - first child constructor
+//   - first child render
+//   - second child constructor
+//   - second child render
+// render phase ends
+
+// commit phase begins
+//   - first child componentDidMount
+//   - second child componentDidMount
+// - parent componentDidMount 
+// commit phase ends

@@ -99,3 +99,22 @@ const router = createBrowserRouter([
 - first constructor is executed then the render then componetDidMount
 - this is similar to functional componet first the jsx is rendered then useeffect with empty dependency is called
 
+## Mounting Life cycle
+- there are two phases
+  - render phase and commit phase
+  - refer the ReactLifeCycle image in assets
+
+- parent constructor
+- parent render
+  - first child constructor
+  - first child render
+  - second child constructor
+  - second child render
+
+  - first child componentDidMount
+  - second child componentDidMount
+- parent componentDidMount  
+
+- DOM manipulation is the costly operation so all the component which needs to be rendered are clubbed together and then it updates the dom and then componentDidMount is executed
+
+

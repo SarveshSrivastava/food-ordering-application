@@ -18,6 +18,8 @@ const Header = () => {
           <li><Link to="/" className="navLinks">Home</Link></li>
           <li><Link to="/about-us" className="navLinks">About Us</Link></li>
           <li><Link to="/contact-us" className="navLinks">Contact Us</Link></li>
+          <li><Link to="/class-component/lifecycle" className="navLinks">ClassComponent</Link></li>
+          <li><Link to="/functional-component/divedeep" className="navLinks">FunctionalComponent</Link></li>
           <li>Cart</li>
           <button className="btn" onClick={handleClick}>
             {btn}

@@ -8,11 +8,13 @@ import AboutUs from "./Components/AboutUs";
 import ContactUs from "./Components/ContactUs";
 import ErrorPage from "./Components/ErrorPage";
 import UserClass from "./Components/UserClass";
+import LifeCycle from "./Components/LifeCycle";
+import FunctionalComponentDiveDeep from "./Components/FunctionalComponentDiveDeep";
 
 const App = () => (
   <h1>
     <Header />
-    <Outlet/>
+    <Outlet />
   </h1>
 );
 
@@ -35,11 +37,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/restaurant/:restaurantId",
-        element:<RestaurantMenu/>,
+        element: <RestaurantMenu />,
       },
       {
         path: "/user",
-        element:<UserClass name="Sarvesh" location="Delhi"/>,
+        element: <UserClass name="Sarvesh" location="Delhi" />,
+      },
+      {
+        path: "/class-component/lifecycle",
+        element: <LifeCycle />,
+      },
+      {
+        path: "/functional-component/divedeep",
+        element: <FunctionalComponentDiveDeep />,
       },
     ],
     errorElement: <ErrorPage />,

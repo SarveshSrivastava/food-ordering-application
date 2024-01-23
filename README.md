@@ -117,4 +117,31 @@ const router = createBrowserRouter([
 
 - DOM manipulation is the costly operation so all the component which needs to be rendered are clubbed together and then it updates the dom and then componentDidMount is executed
 
+## ClassBasedComponent LifeCycle
+- Refer LifeCycle.js for mounting, updating, unmounting 
+
+## FunctionalBasedComponent
+- refer FunctionalComponentDiveDeep.js
+- return in useEffect
+
+### never say componentDidMount and useEffect are similar => Akshay Saini
+- componentDidMount can be async
+
+## in class component componentDidUpdate is called everytime the state is changed
+- componentDidUpdate(prevProps,prevState){
+    conditionalStatement compare current state with old state then perform any action
+  } 
+
+
+## in functional component useEffect hook can be used
+- useEffect(()=>{})
+- useEffect(()=>{},[])
+- useEffect(()=>{},[dependency])
+- useEffect can also have return statement for clean up whereas cleanup in class component are done in componentWillUnmount()
+- useEffect(async ()=>{}) this is not valid (wrong)
+
+## super(props) in class component constructor (Chatgpt)
+## why useEffect(async ()=>{}) this is not valid (Chatgpt)
+
+
 

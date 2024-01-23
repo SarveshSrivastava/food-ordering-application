@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Restaurants from "./Components/Restaurants";
+import RestaurantMenu from "./Components/RestaurantMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import AboutUs from "./Components/AboutUs";
 import ContactUs from "./Components/ContactUs";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs />,
+      },
+      {
+        path: "/restaurant/:restaurantId",
+        element:<RestaurantMenu/>,
       },
     ],
     errorElement: <ErrorPage />,

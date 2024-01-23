@@ -87,3 +87,8 @@ const router = createBrowserRouter([
     - Client side routing   - in this only the component is changed. React is cliet side routing component is changed no call for another page is made in network tab you won't see any call. React is SPA single page application beacuse of this
     - Server side routing   - in this when url is changed page is called from one to another you can see it in network tab
 
+
+## Dynamic routing
+- "/restaurants/:restaurantId"
+- to access this path vaiable we can make use of useParams hook from react-router-dom    
+

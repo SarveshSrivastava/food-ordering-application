@@ -73,3 +73,11 @@
     text-decoration: none;
     color: black;
 }
+
+.navItems{
+    font-size: 35px;
+}
+
+.searchBox{
+    padding: 15px 25px;
+}

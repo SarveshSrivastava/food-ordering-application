@@ -2,12 +2,14 @@ import { useState } from "react";
 import "../App.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [btn, setBtn] = useState("Login");
   const handleClick = () => {
     btn === "Login" ? setBtn("Logout") : setBtn("Login");
   };
 
+  const status = useOnlineStatus();
   return (
     <div className="HeaderComponent">
       <>
@@ -15,12 +17,33 @@ const Header = () => {
       </>
       <>
         <ul className="nav-items">
-          <li><Link to="/" className="navLinks">Home</Link></li>
-          <li><Link to="/about-us" className="navLinks">About Us</Link></li>
-          <li><Link to="/contact-us" className="navLinks">Contact Us</Link></li>
-          <li><Link to="/class-component/lifecycle" className="navLinks">ClassComponent</Link></li>
-          <li><Link to="/functional-component/divedeep" className="navLinks">FunctionalComponent</Link></li>
-          <li>Cart</li>
+          <li className="navItems">{status ? "🟢" : "🔴"}</li>
+          <li className="navItems">
+            <Link to="/" className="navLinks">
+              Home
+            </Link>
+          </li>
+          <li className="navItems">
+            <Link to="/about-us" className="navLinks">
+              About Us
+            </Link>
+          </li>
+          <li className="navItems">
+            <Link to="/contact-us" className="navLinks">
+              Contact Us
+            </Link>
+          </li>
+          <li className="navItems">
+            <Link to="/class-component/lifecycle" className="navLinks">
+              ClassComponent
+            </Link>
+          </li>
+          <li className="navItems">
+            <Link to="/functional-component/divedeep" className="navLinks">
+              FunctionalComponent
+            </Link>
+          </li>
+          <li className="navItems">Cart</li>
           <button className="btn" onClick={handleClick}>
             {btn}
           </button>

@@ -143,5 +143,8 @@ const router = createBrowserRouter([
 ## super(props) in class component constructor (Chatgpt)
 ## why useEffect(async ()=>{}) this is not valid (Chatgpt)
 
+## Custom Hooks
+- refer useRestaurantMenu.js and useOnlineStatus.js
+
 
 

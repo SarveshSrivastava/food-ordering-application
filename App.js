@@ -12,10 +12,10 @@ import LifeCycle from "./Components/LifeCycle";
 import FunctionalComponentDiveDeep from "./Components/FunctionalComponentDiveDeep";
 
 const App = () => (
-  <h1>
+  <>
     <Header />
     <Outlet />
-  </h1>
+  </>
 );
 
 const router = createBrowserRouter([

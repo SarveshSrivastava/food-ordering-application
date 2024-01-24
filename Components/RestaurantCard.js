@@ -10,9 +10,9 @@ const RestaurantCard = ({ name, price, image, avgRating }) => {
         alt="Card Image"
       />
       <div className="card-content">
-        <h6>{name}</h6>
-        <p>{price}</p>
-        <p>{avgRating}</p>
+        <h2>{name}</h2>
+        <h4>{price}</h4>
+        <h4>{avgRating}</h4>
       </div>
     </div>
   );

@@ -4,6 +4,9 @@ import { restaurantsList } from "../mock/restaurants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANTS_LIST } from "../utils/constant";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
+
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -31,9 +34,7 @@ const Restaurants = () => {
   }, []);
 
   const fetchSwiggyData = async () => {
-    const swiggyData = await fetch(
-      RESTAURANTS_LIST
-    );
+    const swiggyData = await fetch(RESTAURANTS_LIST);
     const swiggyJson = await swiggyData.json();
     console.log(
       swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -49,6 +50,11 @@ const Restaurants = () => {
     );
   };
 
+
+  const status = useOnlineStatus();
+  if (status === false)
+    return <h1>You are offline. Check your internet connection</h1>;
+
   // if(restaurants.length===0)
   //   return <Shimmer/>
 
@@ -56,7 +62,7 @@ const Restaurants = () => {
     <Shimmer />
   ) : (
     <>
-      <div>
+      <div className="searchBox">
         <input type="text" value={searchText} onChange={handleChange} />
         <button className="searchButton" onClick={handleSearchClick}>
           SEARCH
@@ -67,7 +73,11 @@ const Restaurants = () => {
       </div>
       <div className="RestaurantsComponents">
         {filteredRestaurants.map((x) => (
-          <Link to={"/restaurant/" + x.info.id} key={x.info.id} className="restaurants">
+          <Link
+            to={"/restaurant/" + x.info.id}
+            key={x.info.id}
+            className="restaurants"
+          >
             <RestaurantCard
               name={x.info.name}
               price={x.info.costForTwo}

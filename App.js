@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Restaurants from "./Components/Restaurants";
@@ -10,6 +10,9 @@ import ErrorPage from "./Components/ErrorPage";
 import UserClass from "./Components/UserClass";
 import LifeCycle from "./Components/LifeCycle";
 import FunctionalComponentDiveDeep from "./Components/FunctionalComponentDiveDeep";
+// import Instamart from "./Components/Instamart";
+
+const Instamart = lazy(() => import("./Components/Instamart"));
 
 const App = () => (
   <>
@@ -42,6 +45,15 @@ const router = createBrowserRouter([
       {
         path: "/user",
         element: <UserClass name="Sarvesh" location="Delhi" />,
+      },
+
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<h1>Loading.....</h1>}>   {/*We can also pass Shimmer in fallback */}
+            <Instamart />
+          </Suspense>
+        ),
       },
       {
         path: "/class-component/lifecycle",

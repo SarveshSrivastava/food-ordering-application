@@ -146,5 +146,10 @@ const router = createBrowserRouter([
 ## Custom Hooks
 - refer useRestaurantMenu.js and useOnlineStatus.js
 
-
+## Lazy loading
+- don't import the component like import <component-name> from "<path-to-the-component>".
+- use lazy and Suspense from react.
+- const <component-name> = lazy(()=>import("<path-to-the-component>"));
+- wrap the component inside <Suspense></Suspense> component from react.
+- provide a fallback that can be rendered until the actual page is loaded
 

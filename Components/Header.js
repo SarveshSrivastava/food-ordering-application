@@ -43,6 +43,11 @@ const Header = () => {
               FunctionalComponent
             </Link>
           </li>
+          <li className="navItems">
+            <Link to="/instamart" className="navLinks">
+              Instamart
+            </Link>
+          </li>
           <li className="navItems">Cart</li>
           <button className="btn" onClick={handleClick}>
             {btn}

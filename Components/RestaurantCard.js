@@ -17,4 +17,16 @@ const RestaurantCard = ({ name, price, image, avgRating }) => {
     </div>
   );
 };
+
+export const hocRestaurantCard = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <>
+        <label>{props.discount&&props.discount.header}</label>
+        <RestaurantCard {...props}/>
+      </>
+    );
+  };
+};
+
 export default RestaurantCard;

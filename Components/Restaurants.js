@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { hocRestaurantCard } from "./RestaurantCard";
 import { restaurantsList } from "../mock/restaurants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANTS_LIST } from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -50,13 +49,14 @@ const Restaurants = () => {
     );
   };
 
-
   const status = useOnlineStatus();
   if (status === false)
     return <h1>You are offline. Check your internet connection</h1>;
 
   // if(restaurants.length===0)
   //   return <Shimmer/>
+
+  const RestaurantCardPromoted = hocRestaurantCard(RestaurantCard);
 
   return restaurants.length === 0 ? (
     <Shimmer />
@@ -78,12 +78,27 @@ const Restaurants = () => {
             key={x.info.id}
             className="restaurants"
           >
-            <RestaurantCard
-              name={x.info.name}
-              price={x.info.costForTwo}
-              image={x.info.cloudinaryImageId}
-              avgRating={x.info.avgRating}
-            />
+            {x.info.aggregatedDiscountInfoV3 &&
+            Number(
+              x.info.aggregatedDiscountInfoV3.header
+                .split(" ")[0]
+                .substring(0, 2)
+            ) > 35 ? (
+              <RestaurantCard
+                name={x.info.name}
+                price={x.info.costForTwo}
+                image={x.info.cloudinaryImageId}
+                avgRating={x.info.avgRating}
+              />
+            ) : (
+              <RestaurantCardPromoted
+                name={x.info.name}
+                price={x.info.costForTwo}
+                image={x.info.cloudinaryImageId}
+                avgRating={x.info.avgRating}
+                discount={x.info.aggregatedDiscountInfoV3}
+              />
+            )}
           </Link>
         ))}
       </div>
